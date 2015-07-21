@@ -1,0 +1,118 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.jpmorgan.stocks</groupId>
+	<artifactId>super-simple-stock</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Super Simple Stock</name>
+	<description>This is an implementation of the Super Simple Stock test for JP Morgan positions</description>
+  
+
+	<properties>
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<commons.lang.version>2.6</commons.lang.version>
+		<commons.logging.version>1.1.1</commons.logging.version>
+		<commons.collections.version>3.2.1</commons.collections.version>
+		<commons.math3.version>3.0</commons.math3.version>
+		<log4j.version>1.2.17</log4j.version>
+		<junit.version>4.8.1</junit.version>
+		
+	</properties>
+  
+ 	<dependencies>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+			<version>${spring.version}</version>
+		</dependency>
+		
+	    <dependency>
+	      <groupId>org.springframework</groupId>
+	      <artifactId>spring-context</artifactId>
+	      <version>${spring.version}</version>
+	    </dependency>
+	    
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+			<version>${spring.version}</version>
+		</dependency>	    
+	
+		<dependency>
+			<groupId>commons-lang</groupId>
+			<artifactId>commons-lang</artifactId>
+			<version>${commons.lang.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>${commons.logging.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>${commons.collections.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-math3</artifactId>
+			<version>${commons.math3.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>${log4j.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>${junit.version}</version>
+		</dependency>
+				
+ 	</dependencies>
+  
+  	<build>
+  		<pluginManagement>
+  			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+	        		<version>3.1</version>  
+					<configuration>
+						<source>1.6</source>
+						<target>1.6</target>
+					</configuration>
+				</plugin>
+  			</plugins>
+  		</pluginManagement>		
+	</build>
+  
+  
+	<repositories>
+		<repository>
+		    <id>springsource-repo</id>
+		    <name>SpringSource Repository</name>
+		    <url>http://repo.springsource.org/release</url>
+		</repository>		
+		<repository>
+		    <id>central</id>
+		    <name>Central repository</name>
+		    <url>http://repo1.maven.org/maven2</url>
+		</repository>		
+		
+		<repository>
+		    <id>Testing</id>
+		    <name>integration-juno</name>
+		    <url>http://maven.eclipse.org/nexus/content/repositories/testing/</url>
+		</repository>		
+		
+		
+	</repositories>
+  
+  
+</project>

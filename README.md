@@ -59,7 +59,7 @@ the data for the unit test, include other features of spring in the application 
 task. Enable the use of annotations, scan spring components in the code and place holder for 
 the properties are already done.
 
-![Super Simple Stocks - Architecture of Solution](https://github.com/jainebri/Super-Simple-Stocks/tree/master/super-simple-stock/src/main/resources/images/super-simple-stocks-architecture.png "Super Simple Stocks - Architecture of Solution")
+![Super Simple Stocks - Architecture of Solution](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-architecture.png "Super Simple Stocks - Architecture of Solution")
 
 Although the approach is SOA, the implementation of the service is built as _**java library**_ as
 a jar artifact named _**super-simple-stock-0.0.1-SNAPSHOT.jar**_. Because there are no explicit 
@@ -110,7 +110,7 @@ all the artifacts, as we need it.
 
 ##### Technical Design
 
-![Super Simple Stocks - Technical Design Modeling](https://github.com/jainebri/Super-Simple-Stocks/tree/master/super-simple-stock/src/main/resources/images/super-simple-stocks-model.png "Super Simple Stocks - Technical Design Modeling")
+![Super Simple Stocks - Technical Design Modeling](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-model.png "Super Simple Stocks - Technical Design Modeling")
 
 ##### Unit Test
 

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_hyGj8DF9EeWkZ4OP-v0JXA" name="model">
+  <packagedElement xmi:type="uml:Class" xmi:id="_8MpkkDGHEeWib-BT278QbQ" clientDependency="_YN8dYDGOEeWSk5bCHsjzqA _kX_7QDGVEeWSk5bCHsjzqA _NFY68DGWEeWSk5bCHsjzqA" name="SimpleStockServicesFactoryImpl">
+    <ownedOperation xmi:id="_8h6-EDGUEeWSk5bCHsjzqA" name="private SimpleStockServicesFactoryImpl"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_xXNSwDGMEeWSk5bCHsjzqA" clientDependency="_Y-3kADGOEeWSk5bCHsjzqA _VrUZgDGXEeWSk5bCHsjzqA _ZomR8DGYEeWSk5bCHsjzqA" name="SpringServiceImpl">
+    <ownedOperation xmi:id="_KLMQIDGVEeWSk5bCHsjzqA" name="private SpringServiceImpl"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_6BX_0DGHEeWib-BT278QbQ" name="SimpleStockServicesFactory">
+    <ownedAttribute xmi:id="_AXUYwDGJEeWib-BT278QbQ" name="INSTANCE" visibility="public" type="_6BX_0DGHEeWib-BT278QbQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AxXQcDGJEeWib-BT278QbQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AxXQcTGJEeWib-BT278QbQ" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_AxX3gDGJEeWib-BT278QbQ">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedOperation xmi:id="_pTcGEDGLEeWSk5bCHsjzqA" name="public SimpleStockService getSimpleStockService"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_5E9MIDGNEeWSk5bCHsjzqA" name="StocksEntityManager">
+    <ownedOperation xmi:id="_-riaIDGNEeWSk5bCHsjzqA" name="public HashMap&lt;String, Stock> getStocks()"/>
+    <ownedOperation xmi:id="_FkAt0DGOEeWSk5bCHsjzqA" name="public Stock getStockBySymbol(String stockSymbol)"/>
+    <ownedOperation xmi:id="_GEQUIDGOEeWSk5bCHsjzqA" name="public ArrayList&lt;Trade> getTrades()"/>
+    <ownedOperation xmi:id="_GjyIwDGOEeWSk5bCHsjzqA" name="public boolean recordTrade(Trade trade) throws Exception"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_YN8dYDGOEeWSk5bCHsjzqA" name="Implements" client="_8MpkkDGHEeWib-BT278QbQ" supplier="_6BX_0DGHEeWib-BT278QbQ"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_Y-3kADGOEeWSk5bCHsjzqA" name="Implements" client="_xXNSwDGMEeWSk5bCHsjzqA" supplier="_BGsSUDGsEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_kxjH4DGOEeWSk5bCHsjzqA" clientDependency="_uZ0CoDGOEeWSk5bCHsjzqA" name="StocksEntityManagerImpl"/>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_uZ0CoDGOEeWSk5bCHsjzqA" name="Implements" client="_kxjH4DGOEeWSk5bCHsjzqA" supplier="_5E9MIDGNEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Class" xmi:id="_2ydvoDGOEeWSk5bCHsjzqA" name="Stock">
+    <ownedAttribute xmi:id="_9sdQ0DGPEeWSk5bCHsjzqA" name="stockSymbol" visibility="public" type="_EhbkkDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_IIaSUDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_IIa5YDGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_IIcHgDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_LVR28DGQEeWSk5bCHsjzqA" name="stockType" visibility="public" type="_W5CqgDGPEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_LnAgIDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_LnBHMDGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_LnC8YDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_ME-OgDGQEeWSk5bCHsjzqA" name="lastDividend" visibility="public" type="_R7OQMDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MS25gDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MS25gTGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_MS4HoDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_MujXADGQEeWSk5bCHsjzqA" name="fixedDividend" visibility="public" type="_R7OQMDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_M7kfUDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_M7lGYDGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_M7mUgDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_NJfmkDGQEeWSk5bCHsjzqA" name="parValue" visibility="public" type="_R7OQMDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Nayx8DGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Nayx8TGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Na0AEDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_Nrm1IDGQEeWSk5bCHsjzqA" name="tickerPrice" visibility="public" type="_EhbkkDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Q-HHsDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Q-HuwDGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_Q-IV0DGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3HLbYDGOEeWSk5bCHsjzqA" name="Trade">
+    <ownedAttribute xmi:id="_-hfl8DGQEeWSk5bCHsjzqA" name="timeStamp" visibility="public" type="_KgiK0DGREeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-zjmUDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-zjmUTGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_-zkNYDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__MNW4DGQEeWSk5bCHsjzqA" name="stock" visibility="public" type="_2ydvoDGOEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="__fNLYDGQEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="__fNycDGQEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="__fOZgDGQEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="__7vWYDGQEeWSk5bCHsjzqA" name="tradeIndicator" visibility="public" type="_fE1AMDGPEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_AOHf0DGREeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_AOHf0TGREeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_AOIG4DGREeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_AqvxcDGREeWSk5bCHsjzqA" name="sharesQuantity" visibility="public" type="_dbHa8DGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_A7EscDGREeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_A7EscTGREeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_A7FTgDGREeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+    <ownedAttribute xmi:id="_BSSSkDGREeWSk5bCHsjzqA" name="price" visibility="public" type="_R7OQMDGQEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BcUYUDGREeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BcU_YDGREeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_BcVmcDGREeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_3atbYDGOEeWSk5bCHsjzqA" clientDependency="_RmWB0DGPEeWSk5bCHsjzqA" name="SimpleStockServiceImpl">
+    <ownedAttribute xmi:id="_8zEtkDGWEeWSk5bCHsjzqA" name="stocksEntityManager" visibility="public" type="_5E9MIDGNEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_-zRqwDGWEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_-zSR0DGWEeWSk5bCHsjzqA" value="1"/>
+      <defaultValue xmi:type="uml:LiteralString" xmi:id="_-zTf8DGWEeWSk5bCHsjzqA">
+        <value xsi:nil="true"/>
+      </defaultValue>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_7o9kgDGOEeWSk5bCHsjzqA" name="SimpleStockService">
+    <ownedOperation xmi:id="_DRI20DGPEeWSk5bCHsjzqA" name="public double calculateDividendYield(String stockSymbol) throws Exception"/>
+    <ownedOperation xmi:id="_Dqnt0DGPEeWSk5bCHsjzqA" name="public double calculatePERatio(String stockSymbol) throws Exception"/>
+    <ownedOperation xmi:id="_ECtdsDGPEeWSk5bCHsjzqA" name="public boolean recordTrade(Trade trade) throws Exception"/>
+    <ownedOperation xmi:id="_EX6RoDGPEeWSk5bCHsjzqA" name="public double calculateStockPrice(String stockSymbol) throws Exception"/>
+    <ownedOperation xmi:id="_ExaWwDGPEeWSk5bCHsjzqA" name="public double calculateGBCEAllShareIndex() throws Exception"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Realization" xmi:id="_RmWB0DGPEeWSk5bCHsjzqA" name="Implements" client="_3atbYDGOEeWSk5bCHsjzqA" supplier="_7o9kgDGOEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_W5CqgDGPEeWSk5bCHsjzqA" name="StockType">
+    <ownedLiteral xmi:id="_YbZOEDGPEeWSk5bCHsjzqA" name="COMMON"/>
+    <ownedLiteral xmi:id="_Zvn2EDGPEeWSk5bCHsjzqA" name="PREFERRED"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_fE1AMDGPEeWSk5bCHsjzqA" name="TradeIndicator">
+    <ownedLiteral xmi:id="_jzS6cDGPEeWSk5bCHsjzqA" name="BUY"/>
+    <ownedLiteral xmi:id="_kNpUIDGPEeWSk5bCHsjzqA" name="SELL"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_EhbkkDGQEeWSk5bCHsjzqA" name="String"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_R7OQMDGQEeWSk5bCHsjzqA" name="double"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_dbHa8DGQEeWSk5bCHsjzqA" name="int"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_KgiK0DGREeWSk5bCHsjzqA" name="Date"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_fzqxQDGREeWSk5bCHsjzqA" name="typeOf" memberEnd="_fzqxQTGREeWSk5bCHsjzqA _fzqKMDGREeWSk5bCHsjzqA" navigableOwnedEnd="_fzqKMDGREeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_fzqxQTGREeWSk5bCHsjzqA" name="stock" type="_2ydvoDGOEeWSk5bCHsjzqA" association="_fzqxQDGREeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzqxQjGREeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzqxQzGREeWSk5bCHsjzqA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_fzqKMDGREeWSk5bCHsjzqA" name="stockType" type="_W5CqgDGPEeWSk5bCHsjzqA" association="_fzqxQDGREeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fzqKMTGREeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fzqKMjGREeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_BmBcAzGTEeWSk5bCHsjzqA" name="typeOf" memberEnd="_BmBcBDGTEeWSk5bCHsjzqA _BmBcADGTEeWSk5bCHsjzqA" navigableOwnedEnd="_BmBcADGTEeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_BmBcBDGTEeWSk5bCHsjzqA" name="trade" type="_3HLbYDGOEeWSk5bCHsjzqA" association="_BmBcAzGTEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BmBcBTGTEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BmBcBjGTEeWSk5bCHsjzqA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_BmBcADGTEeWSk5bCHsjzqA" name="tradeIndicator" type="_fE1AMDGPEeWSk5bCHsjzqA" association="_BmBcAzGTEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_BmBcATGTEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_BmBcAjGTEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_ZCBzcDGTEeWSk5bCHsjzqA" name="associated" memberEnd="_ZCBzcTGTEeWSk5bCHsjzqA _ZCBMYDGTEeWSk5bCHsjzqA" navigableOwnedEnd="_ZCBMYDGTEeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_ZCBzcTGTEeWSk5bCHsjzqA" name="trade" type="_3HLbYDGOEeWSk5bCHsjzqA" association="_ZCBzcDGTEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZCBzcjGTEeWSk5bCHsjzqA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZCBzczGTEeWSk5bCHsjzqA" value="*"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_ZCBMYDGTEeWSk5bCHsjzqA" name="stock" type="_2ydvoDGOEeWSk5bCHsjzqA" association="_ZCBzcDGTEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ZCBMYTGTEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ZCBMYjGTEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_kX_7QDGVEeWSk5bCHsjzqA" name="load spring context" client="_8MpkkDGHEeWib-BT278QbQ" supplier="_BGsSUDGsEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_NFY68DGWEeWSk5bCHsjzqA" name="instanciate Services" client="_8MpkkDGHEeWib-BT278QbQ" supplier="_BGsSUDGsEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_CxwSgDGXEeWSk5bCHsjzqA" name="access to Services" memberEnd="_CxwSgTGXEeWSk5bCHsjzqA _CxvrcDGXEeWSk5bCHsjzqA" navigableOwnedEnd="_CxvrcDGXEeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_CxwSgTGXEeWSk5bCHsjzqA" name="" type="_3atbYDGOEeWSk5bCHsjzqA" association="_CxwSgDGXEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CxwSgjGXEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CxwSgzGXEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_CxvrcDGXEeWSk5bCHsjzqA" name="stocksEntityManager" type="_5E9MIDGNEeWSk5bCHsjzqA" association="_CxwSgDGXEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_CxvrcTGXEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_CxvrcjGXEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_VrUZgDGXEeWSk5bCHsjzqA" name="create instances" client="_xXNSwDGMEeWSk5bCHsjzqA" supplier="_3atbYDGOEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Component" xmi:id="_uSN2wDGXEeWSk5bCHsjzqA" clientDependency="_6xaiYDGXEeWSk5bCHsjzqA _sI55gDGaEeWSk5bCHsjzqA _y_ZQMDGaEeWSk5bCHsjzqA" name="Spring Framework"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_6xaiYDGXEeWSk5bCHsjzqA" name="injected by IoC" client="_uSN2wDGXEeWSk5bCHsjzqA" supplier="_kxjH4DGOEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_ZomR8DGYEeWSk5bCHsjzqA" name="load spring context" client="_xXNSwDGMEeWSk5bCHsjzqA" supplier="_uSN2wDGXEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8BbjUDGYEeWSk5bCHsjzqA" name="record" memberEnd="_8BbjUTGYEeWSk5bCHsjzqA _8Ba8QDGYEeWSk5bCHsjzqA" navigableOwnedEnd="_8Ba8QDGYEeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_8BbjUTGYEeWSk5bCHsjzqA" name="stockEntityManager" type="_kxjH4DGOEeWSk5bCHsjzqA" association="_8BbjUDGYEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8BbjUjGYEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8BbjUzGYEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_8Ba8QDGYEeWSk5bCHsjzqA" name="trade" type="_3HLbYDGOEeWSk5bCHsjzqA" association="_8BbjUDGYEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8Ba8QTGYEeWSk5bCHsjzqA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8Ba8QjGYEeWSk5bCHsjzqA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_8VddIDGZEeWSk5bCHsjzqA" name="store" memberEnd="_8VddITGZEeWSk5bCHsjzqA _8Vc2EDGZEeWSk5bCHsjzqA" navigableOwnedEnd="_8Vc2EDGZEeWSk5bCHsjzqA">
+    <ownedEnd xmi:id="_8VddITGZEeWSk5bCHsjzqA" name="stocksEntityManager" type="_kxjH4DGOEeWSk5bCHsjzqA" association="_8VddIDGZEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8VddIjGZEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8VddIzGZEeWSk5bCHsjzqA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:id="_8Vc2EDGZEeWSk5bCHsjzqA" name="stock" type="_2ydvoDGOEeWSk5bCHsjzqA" association="_8VddIDGZEeWSk5bCHsjzqA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8Vc2ETGZEeWSk5bCHsjzqA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8Vc2EjGZEeWSk5bCHsjzqA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_sI55gDGaEeWSk5bCHsjzqA" name="injected by IoC" client="_uSN2wDGXEeWSk5bCHsjzqA" supplier="_3HLbYDGOEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_y_ZQMDGaEeWSk5bCHsjzqA" name="Injected by IoC" client="_uSN2wDGXEeWSk5bCHsjzqA" supplier="_2ydvoDGOEeWSk5bCHsjzqA"/>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_BGsSUDGsEeWSk5bCHsjzqA" name="SpringService">
+    <ownedAttribute xmi:id="_HofLYDGsEeWSk5bCHsjzqA" name="INSTANCE"/>
+    <ownedOperation xmi:id="_JTMZsDGsEeWSk5bCHsjzqA" name="public &lt;T extends Object> T getBean(String beanName, Class&lt;T> objectClass)"/>
+    <ownedOperation xmi:id="_KMSk4DGsEeWSk5bCHsjzqA" name="public &lt;T extends Object> T getBean(Class&lt;T> objectClass)"/>
+  </packagedElement>
+</uml:Model>

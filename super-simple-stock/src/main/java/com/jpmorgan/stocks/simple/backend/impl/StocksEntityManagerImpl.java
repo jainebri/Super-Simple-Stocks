@@ -10,6 +10,7 @@ import com.jpmorgan.stocks.simple.model.Stock;
 import com.jpmorgan.stocks.simple.model.Trade;
 
 /**
+ * Implementation of the Stock Entity Manager.
  * 
  * @author Jaidermes Nebrijo Duarte
  *

@@ -1,68 +1,62 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd" >
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 
 	<!-- Scan all spring components and services -->	
-	<context:component-scan base-package="com.jpmorgan.stocks.simple" />
+	<context:component-scan base-package="com.jpmorgan.stocks.simple"></context:component-scan>
 	
 	<!-- Enable the use of annotations in the classes -->	
-	<context:annotation-config/>
+	<context:annotation-config></context:annotation-config>
 
 	<!-- Configure the placeholder for the properties	 -->  
-	<context:property-placeholder location="classpath:simple-stocks.properties" />	
+	<context:property-placeholder location="classpath:simple-stocks.properties"></context:property-placeholder>	
 	
-	<bean id="datesUtils" class="com.jpmorgan.stocks.simple.arch.utils.impl.DatesUtilsImpl" />
+	<bean id="datesUtils" class="com.jpmorgan.stocks.simple.arch.utils.impl.DatesUtilsImpl"></bean>
 	
 	<!-- Configure the stocks supported by Super Simple Stock application	 -->  
 	<bean id="stockTEA" class="com.jpmorgan.stocks.simple.model.Stock">
-		<property name="stockSymbol" value="TEA" />
-		<property name="stockType" value="COMMON" />
-		<property name="lastDividend" value="8" />
-		<property name="fixedDividend" value="0" />
-		<property name="parValue" value="100" />
+		<property name="stockSymbol" value="TEA"></property>
+		<property name="stockType" value="COMMON"></property>
+		<property name="lastDividend" value="8"></property>
+		<property name="fixedDividend" value="0"></property>
+		<property name="parValue" value="100"></property>
 	</bean>
 	<bean id="stockPOP" class="com.jpmorgan.stocks.simple.model.Stock">
-		<property name="stockSymbol" value="POP" />
-		<property name="stockType" value="COMMON" />
-		<property name="lastDividend" value="8" />
-		<property name="fixedDividend" value="0" />
-		<property name="parValue" value="100" />
+		<property name="stockSymbol" value="POP"></property>
+		<property name="stockType" value="COMMON"></property>
+		<property name="lastDividend" value="8"></property>
+		<property name="fixedDividend" value="0"></property>
+		<property name="parValue" value="100"></property>
 	</bean>
 	<bean id="stockALE" class="com.jpmorgan.stocks.simple.model.Stock">
-		<property name="stockSymbol" value="ALE" />
-		<property name="stockType" value="COMMON" />
-		<property name="lastDividend" value="23" />
-		<property name="fixedDividend" value="0" />
-		<property name="parValue" value="60" />
+		<property name="stockSymbol" value="ALE"></property>
+		<property name="stockType" value="COMMON"></property>
+		<property name="lastDividend" value="23"></property>
+		<property name="fixedDividend" value="0"></property>
+		<property name="parValue" value="60"></property>
 	</bean>
 	<bean id="stockGIN" class="com.jpmorgan.stocks.simple.model.Stock">
-		<property name="stockSymbol" value="GIN" />
-		<property name="stockType" value="PREFERRED" />
-		<property name="lastDividend" value="8" />
-		<property name="fixedDividend" value="0.02" />
-		<property name="parValue" value="100" />
+		<property name="stockSymbol" value="GIN"></property>
+		<property name="stockType" value="PREFERRED"></property>
+		<property name="lastDividend" value="8"></property>
+		<property name="fixedDividend" value="0.02"></property>
+		<property name="parValue" value="100"></property>
 	</bean>
 	<bean id="stockJOE" class="com.jpmorgan.stocks.simple.model.Stock">
-		<property name="stockSymbol" value="JOE" />
-		<property name="stockType" value="COMMON" />
-		<property name="lastDividend" value="13" />
-		<property name="fixedDividend" value="0" />
-		<property name="parValue" value="250" />
+		<property name="stockSymbol" value="JOE"></property>
+		<property name="stockType" value="COMMON"></property>
+		<property name="lastDividend" value="13"></property>
+		<property name="fixedDividend" value="0"></property>
+		<property name="parValue" value="250"></property>
 	</bean>
 		
 	<bean id="stocksEntityManager" class="com.jpmorgan.stocks.simple.backend.impl.StocksEntityManagerImpl">
 		<property name="stocks">
 			<map>
-				<entry key="TEA" value-ref="stockTEA" />
-				<entry key="POP" value-ref="stockPOP" />
-				<entry key="ALE" value-ref="stockALE" />
-				<entry key="GIN" value-ref="stockGIN" />
-				<entry key="JOE" value-ref="stockJOE" />
+				<entry key="TEA" value-ref="stockTEA"></entry>
+				<entry key="POP" value-ref="stockPOP"></entry>
+				<entry key="ALE" value-ref="stockALE"></entry>
+				<entry key="GIN" value-ref="stockGIN"></entry>
+				<entry key="JOE" value-ref="stockJOE"></entry>
 			</map>
 		</property>
 	</bean>

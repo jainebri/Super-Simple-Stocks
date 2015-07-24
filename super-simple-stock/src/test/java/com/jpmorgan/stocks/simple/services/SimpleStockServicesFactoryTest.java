@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import com.jpmorgan.stocks.simple.arch.SimpleStockServicesFactory;
 import com.jpmorgan.stocks.simple.arch.SpringService;
+import com.jpmorgan.stocks.simple.backend.StocksEntityManager;
 import com.jpmorgan.stocks.simple.model.Trade;
 
 /**
@@ -84,7 +85,8 @@ public class SimpleStockServicesFactoryTest {
 
 		try{
 			// Initial trades are empty, means, trades number equls to cero (0)
-			int tradesNumber = simpleStockService.getTradesNumber();
+			StocksEntityManager stocksEntityManager = SpringService.INSTANCE.getBean("stocksEntityManager", StocksEntityManager.class);
+			int tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 			Assert.assertEquals(tradesNumber, 0);
 
@@ -95,7 +97,7 @@ public class SimpleStockServicesFactoryTest {
 			}
 
 			// After record trades, the number of trades should be equal to the trades list
-			tradesNumber = simpleStockService.getTradesNumber();
+			tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 			Assert.assertEquals(tradesNumber, tradeList.size());
 
@@ -118,7 +120,8 @@ public class SimpleStockServicesFactoryTest {
 			SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
 			Assert.assertNotNull(simpleStockService);
 
-			int tradesNumber = simpleStockService.getTradesNumber();
+			StocksEntityManager stocksEntityManager = SpringService.INSTANCE.getBean("stocksEntityManager", StocksEntityManager.class);
+			int tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 
 			// Calculates the dividend yield for the stock symbol
@@ -147,7 +150,8 @@ public class SimpleStockServicesFactoryTest {
 			SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
 			Assert.assertNotNull(simpleStockService);
 
-			int tradesNumber = simpleStockService.getTradesNumber();
+			StocksEntityManager stocksEntityManager = SpringService.INSTANCE.getBean("stocksEntityManager", StocksEntityManager.class);
+			int tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 
 			// Calculates the P/E Ratio for the stock Symbol
@@ -177,7 +181,8 @@ public class SimpleStockServicesFactoryTest {
 			SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
 			Assert.assertNotNull(simpleStockService);
 
-			int tradesNumber = simpleStockService.getTradesNumber();
+			StocksEntityManager stocksEntityManager = SpringService.INSTANCE.getBean("stocksEntityManager", StocksEntityManager.class);
+			int tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 			
 			// Calculates the Stock Price for all stocks
@@ -207,7 +212,8 @@ public class SimpleStockServicesFactoryTest {
 			SimpleStockService simpleStockService = SimpleStockServicesFactory.INSTANCE.getSimpleStockService();
 			Assert.assertNotNull(simpleStockService);
 
-			int tradesNumber = simpleStockService.getTradesNumber();
+			StocksEntityManager stocksEntityManager = SpringService.INSTANCE.getBean("stocksEntityManager", StocksEntityManager.class);
+			int tradesNumber = stocksEntityManager.getTrades().size();
 			logger.info("Trades number: "+tradesNumber);
 			
 			double GBCEAllShareIndex = simpleStockService.calculateGBCEAllShareIndex();

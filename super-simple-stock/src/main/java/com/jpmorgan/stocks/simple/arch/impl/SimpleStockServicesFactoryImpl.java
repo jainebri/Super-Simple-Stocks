@@ -5,7 +5,7 @@ import com.jpmorgan.stocks.simple.arch.SpringService;
 import com.jpmorgan.stocks.simple.services.SimpleStockService;
 
 /**
- * Factory of the services in the Super Simple Stock application. 
+ * Implementation of the Factory of the services in the Super Simple Stock application. 
  * 
  * As design decision, all possible external systems or high level layers in the application 
  * will access to the services through this factory and because of that it is implemented 

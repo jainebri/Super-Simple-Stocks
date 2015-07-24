@@ -1,257 +1,251 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:tx="http://www.springframework.org/schema/tx"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
-		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
-		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd" >
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context" xmlns:tx="http://www.springframework.org/schema/tx" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd   http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd   http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd">
 	
-	<import resource="stocks-boundary-services-context.xml"/>
+	<import resource="stocks-boundary-services-context.xml"></import>
 		
 	<bean id="tradeList" class="java.util.ArrayList" scope="prototype">
 		<constructor-arg>
 			<list>
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-30" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-30"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockTEA" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="20" />
-					<property name="price" value="12.23" />
+					<property name="stock" ref="stockTEA"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="20"></property>
+					<property name="price" value="12.23"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-28" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-28"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockPOP" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="80" />
-					<property name="price" value="7.56" />
+					<property name="stock" ref="stockPOP"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="80"></property>
+					<property name="price" value="7.56"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-26" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-26"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockTEA" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="450" />
-					<property name="price" value="10.20" />
+					<property name="stock" ref="stockTEA"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="450"></property>
+					<property name="price" value="10.20"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-26" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-26"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockPOP" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="50" />
-					<property name="price" value="6.20" />
+					<property name="stock" ref="stockPOP"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="50"></property>
+					<property name="price" value="6.20"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-22" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-22"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockALE" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="214" />
-					<property name="price" value="25.67" />
+					<property name="stock" ref="stockALE"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="214"></property>
+					<property name="price" value="25.67"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-22" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-22"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockGIN" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="77" />
-					<property name="price" value="8.97" />
+					<property name="stock" ref="stockGIN"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="77"></property>
+					<property name="price" value="8.97"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-18" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-18"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockJOE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="120" />
-					<property name="price" value="18.97" />
+					<property name="stock" ref="stockJOE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="120"></property>
+					<property name="price" value="18.97"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-18" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-18"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockALE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="83" />
-					<property name="price" value="21.00" />
+					<property name="stock" ref="stockALE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="83"></property>
+					<property name="price" value="21.00"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-17" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-17"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockGIN" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="70" />
-					<property name="price" value="12.97" />
+					<property name="stock" ref="stockGIN"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="70"></property>
+					<property name="price" value="12.97"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-16" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-16"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockJOE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="326" />
-					<property name="price" value="20.97" />
+					<property name="stock" ref="stockJOE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="326"></property>
+					<property name="price" value="20.97"></property>
 				</bean>
 				
 				<!-- Trades of the last 15 minutes -->
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-14" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-14"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockTEA" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="20" />
-					<property name="price" value="12.23" />
+					<property name="stock" ref="stockTEA"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="20"></property>
+					<property name="price" value="12.23"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-14" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-14"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockPOP" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="80" />
-					<property name="price" value="7.56" />
+					<property name="stock" ref="stockPOP"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="80"></property>
+					<property name="price" value="7.56"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-12" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-12"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockTEA" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="450" />
-					<property name="price" value="10.20" />
+					<property name="stock" ref="stockTEA"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="450"></property>
+					<property name="price" value="10.20"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-12" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-12"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockPOP" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="50" />
-					<property name="price" value="6.20" />
+					<property name="stock" ref="stockPOP"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="50"></property>
+					<property name="price" value="6.20"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-10" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-10"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockALE" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="214" />
-					<property name="price" value="25.67" />
+					<property name="stock" ref="stockALE"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="214"></property>
+					<property name="price" value="25.67"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-10" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-10"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockGIN" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="77" />
-					<property name="price" value="8.97" />
+					<property name="stock" ref="stockGIN"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="77"></property>
+					<property name="price" value="8.97"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-8" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-8"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockJOE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="120" />
-					<property name="price" value="18.97" />
+					<property name="stock" ref="stockJOE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="120"></property>
+					<property name="price" value="18.97"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-8" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-8"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockALE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="83" />
-					<property name="price" value="21.00" />
+					<property name="stock" ref="stockALE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="83"></property>
+					<property name="price" value="21.00"></property>
 				</bean>
 
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-6" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-6"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockGIN" />
-					<property name="tradeIndicator" value="SELL" />
-					<property name="sharesQuantity" value="70" />
-					<property name="price" value="12.97" />
+					<property name="stock" ref="stockGIN"></property>
+					<property name="tradeIndicator" value="SELL"></property>
+					<property name="sharesQuantity" value="70"></property>
+					<property name="price" value="12.97"></property>
 				</bean>
 				
 				<bean class="com.jpmorgan.stocks.simple.model.Trade">
 					<property name="timeStamp">
-						<bean factory-bean="datesUtils" factory-method="getNowSpliceMinutes">
-							<constructor-arg value="-6" />
+						<bean factory-bean="datesUtils" factory-method="getNowMovedMinutes">
+							<constructor-arg value="-6"></constructor-arg>
 						</bean>
 					</property>
-					<property name="stock" ref="stockJOE" />
-					<property name="tradeIndicator" value="BUY" />
-					<property name="sharesQuantity" value="326" />
-					<property name="price" value="20.97" />
+					<property name="stock" ref="stockJOE"></property>
+					<property name="tradeIndicator" value="BUY"></property>
+					<property name="sharesQuantity" value="326"></property>
+					<property name="price" value="20.97"></property>
 				</bean>
 				
 			</list>

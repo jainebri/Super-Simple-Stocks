@@ -79,7 +79,8 @@ service in Spring, the HTTP requests should be handled by a resource controller.
 is a simple POJO (Plain Old Java Object) identified by the **@RestController** annotation. 
 Each operation in the web service should be mapped with a method in the controller, which is accomplished
 using the **@RequestMapping** annotation. In the solution architecture, the resource controller class
-should be added in the integration layer. The next snippet of code shows the resource controller to new 
+should be added in a new possible web service layer for integration purpose. The next snippet of code 
+shows the resource controller to new 
 integration requirement:
 
 ```java

@@ -27,6 +27,17 @@ the hiring process for a very important company.
 
 3.	Formulas and data provided are simplified representations for the purpose of this exercise.
 
+##### Global Beverage Corporation Exchange
+
+Stock Symbol  | Type | Last Dividend | Fixed Dividend | Par Value
+------------- | ---- | ------------: | :------------: | --------: 
+TEA           | Common    | 0  |    | 100
+POP           | Common    | 8  |    | 100
+ALE           | Common    | 23 |    | 60
+GIN           | Preferred | 8  | 2% | 100
+JOE           | Common    | 13 |    | 250
+
+
 
 ### 2. Solution
 

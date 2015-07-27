@@ -119,12 +119,34 @@ configuration if we want to generate a war file instead a jar, for example, but 
 are small. So, with maven as project management tool we have many possibilities to generate 
 all the artifacts, as we need it.
 
+##### Technical Design
 
-##### Technical Design
+The first technical decision in our implementation strategy is to provide a unique access to all services in the application. This is accomplished by defining the component SimpleStocksServicesFactory, which implements the factory pattern to acts as the interface to create all services in the Super Simple Stocks application. The services built by the factory are considered as _**border services**_ and they will be the entry point to the business functionalities for all the external applications that wants to integrate with the stocks library. Each border service is mapped to one unique method in the class SimpleStocksServicesFactory to creates the correspondiente service instante, using as helper the service _**SpringService**_. This service is responsible to load the Spring context making available all services, architecture components, business model objects and utils defined to support the business functionalities. Additionally, provides a generic to gets all the beans configured in the Spring context.
+
 
 ![Super Simple Stocks - Technical Design Modeling](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-model.png "Super Simple Stocks - Technical Design Modeling")
 
-##### Unit Test
+For this technical test, the factory component just has one method _**getSimpleStocksService**_, that creates a singleton instante of the SimpleStocksService, which is the main service in the app and contains all method for the calculations. The class SimpleStocksServicesFactoryImpl is the implementation of the factory and implements a thread safe singleton pattern proposed by Bill Puigh. The next snippet of code ilustrates how to use the factory to create a service:
+
+```java
+SimpleStocksService simpleStockService = SimpleStocksServicesFactory.INSTANCE.getSimpleStocksService();
+```
+
+As all services are configured in the Spring framework, there are many possibilities to design and build the structure of the services, but for this application we have defined that the border services only can use the services in the backend layer. So, The service _**StocksEntityManager**_, is injected by IoC into the border service SimpleStocksService. As one of the constraints of the technical test is 'no database', the entity manager service represents the persistence layer of the application holding all data in memory and providing the methods to recover and store socks and trades in the app. The SimpleStocksService use the entity manager to simulate the database operations for the stocks application.
+
+Finally, the SimpleStocksServiceImpl implements all the functionalities coding the bussiness rules  to make the calculations of the dividend yield, P/E Ratio, stock price, and GBCE All Share índex.
+
+##### Unit Test
+
+To test the code of the technical test, it has been used Test Driven Approach provided by maven, coding some junit test for each requirement. Additionally, it has been coded junit test to verfiy the availability of the services as the factory service and the simple stock service.
+
+##### Try Yourself
+
+The code for the technical test was built as an Eclipse project with a embebed version of Maven. To compile the code, dos load the folder super-simple-stock and import the project in Eclipse as a maven project. Alternatively, by console Rin the nexo command working in the folder super-simple-stock:
+
+maven clean install
+
+This will compile the code and will execute the unit test.
 
 
 

@@ -121,12 +121,12 @@ all the artifacts, as we need it.
 
 ##### Technical Design
 
-The first technical decision in our implementation strategy is to provide a unique access to all services in the application. This is accomplished by defining the component SimpleStocksServicesFactory, which implements the factory pattern to acts as the interface to create all services in the Super Simple Stocks application. The services built by the factory are considered as _**border services**_ and they will be the entry point to the business functionalities for all the external applications that wants to integrate with the stocks library. Each border service is mapped to one unique method in the class SimpleStocksServicesFactory to creates the correspondiente service instante, using as helper the service _**SpringService**_. This service is responsible to load the Spring context making available all services, architecture components, business model objects and utils defined to support the business functionalities. Additionally, provides a generic to gets all the beans configured in the Spring context.
+The first technical decision in our implementation strategy is to provide a unique access to all services in the application. This is accomplished by defining the component **SimpleStocksServicesFactory**, which implements the factory pattern and acts as the interface to create all services in the Super Simple Stocks application. The services built by the factory are considered as _**border services**_ and they will be the entry point to the business functionalities for all the external applications that wants to integrate with the stocks library. Each border service is mapped to one unique method in the class SimpleStocksServicesFactory to creates the corresponding service instance, using as helper the service _**SpringService**_. This service is responsible to load the Spring context making available all services, architecture components, business model objects and utils defined to support the business functionalities. Additionally, provides a generic mechanism to gets all the beans configured in the Spring context.
 
 
 ![Super Simple Stocks - Technical Design Modeling](https://github.com/jainebri/Super-Simple-Stocks/blob/master/super-simple-stock/src/main/resources/images/super-simple-stocks-model.png "Super Simple Stocks - Technical Design Modeling")
 
-For this technical test, the factory component just has one method _**getSimpleStocksService**_, that creates a singleton instante of the SimpleStocksService, which is the main service in the app and contains all method for the calculations. The class SimpleStocksServicesFactoryImpl is the implementation of the factory and implements a thread safe singleton pattern proposed by Bill Puigh. The next snippet of code ilustrates how to use the factory to create a service:
+For this technical test, the factory component just has one method _**getSimpleStocksService**_, that creates a singleton instance of the **SimpleStocksService**, which is the main service in the app and contains all method for the calculations. The class SimpleStocksServicesFactoryImpl is the implementation of the factory and implements a thread safe singleton pattern proposed by Bill Puigh. The next snippet of code ilustrates how to use the factory to create a service:
 
 ```java
 SimpleStocksService simpleStockService = SimpleStocksServicesFactory.INSTANCE.getSimpleStocksService();
@@ -138,13 +138,13 @@ Finally, the SimpleStocksServiceImpl implements all the functionalities coding t
 
 ##### Unit Test
 
-To test the code of the technical test, it has been used Test Driven Approach provided by maven, coding some junit test for each requirement. Additionally, it has been coded junit test to verfiy the availability of the services as the factory service and the simple stock service.
+To test the code of the technical test, it has been used Test Driven Approach provided by maven, coding some junit test for each requirement. Additionally, it has been coded junit test to verify the availability of the services as the factory service and the simple stock service.
 
 ##### Try Yourself
 
-The code for the technical test was built as an Eclipse project with a embebed version of Maven. To compile the code, dos load the folder super-simple-stock and import the project in Eclipse as a maven project. Alternatively, by console Rin the nexo command working in the folder super-simple-stock:
+The code for the technical test was built as an Eclipse project with a embedded version of Maven. To compile the code, download the folder super-simple-stock and import the project in Eclipse as a maven project. Alternatively, by console run the next command, working in the folder super-simple-stock:
 
-maven clean install
+     maven clean install
 
 This will compile the code and will execute the unit test.
 
